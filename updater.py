@@ -1,5 +1,5 @@
 # <updater_version>SECOND RELEASE</updater_version>
-updater_version = "SECOND RELEASE"
+updater_version = "SECOND RELEASE(.*?)"
 
 import requests
 import re
