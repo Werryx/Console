@@ -1,4 +1,5 @@
 # <updater_version>FIRST RELEASE</updater_version>
+updater_version = "FIRST RELEASE"
 print("Поиск обновлений...")
 
 import requests
