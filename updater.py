@@ -1,9 +1,19 @@
-# <updater_version>FIRST RELEASE</updater_version>
-updater_version = "FIRST RELEASE"
-print("Поиск обновлений...")
+# <updater_version>SECOND RELEASE</updater_version>
+updater_version = "SECOND RELEASE"
 
 import requests
 import re
+
+def update_updater():
+	info3 = requests.get('https://github.com/Werryx/Console/blob/master/update_updater.py.txt')
+	output3 = "".join(re.findall(r"<updater_version>(.*?)</updater_version>", info3.text)).replace("\j", "\n").replace("\k", "\t")
+	if(updater_version != output3):
+		import updater3
+		print("Было найдено обновление файла updater.py. Обновление уже установлено. Пожалуйста, перезапустите файл")
+		exit()
+update_updater()
+
+print("Поиск обновлений...")
 
 f = open(".version.txt")
 vernow = f.read()
